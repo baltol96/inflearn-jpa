@@ -22,9 +22,8 @@ public class Member extends BaseEntity {
     @JoinColumn(name = "LOCKER_ID")
     private Locker locker;
 
-    private String city;
-    private String street;
-    private String zipcode;
+    @Embedded
+    private Address address;
 
     @OneToMany(mappedBy = "member")
     List<Order> orders = new ArrayList<>();
